@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html>
+	<head><h2>=Assignment2 JavaScript Program=</h2></head>
+	<body>
+	<script>
+		
+		function test1(x=26,y=49){
+			return  x*4 + y%7;
+		}
+		
+		//	1. Variable Number of Actual Parameters 
+		
+		document.write( "<b>1. variable number of actual parameters</b>");
+			
+		document.write ( "<br>result : " + test1(3,5) + "<br>" );	//numbers as parameters
+		
+		//	2. Parameter Correspondence
+		document.write ( "<br><b>2.parameter correspondence</b>" );
+		//		2.a Positional
+
+		document.write ( "<br><i>2.a positional</i>" );
+
+		document.write ( "<br>result : " + test1(5,3) + "<br>" );	// values of x and y are swapped
+				
+		//		2.b Keyword
+
+		document.write ( "<br><i>2.b keyword</i>" );
+			
+		document.write ( "<br>result : " + test1(3) + "<br>" );	//only x input is given, y uses default value
+
+		//		2.c Combination
+
+		document.write ( "<br><i>2.c combination</i>" );
+			
+		document.write ( "<br>result : " + test1(3+5,5-3) + "<br>" );	//expressions as inputs
+		
+		//	3. Formal Parameter Default Values 
+
+		document.write ( "<br><b>3. formal parameter default values</b>" );
+	
+		document.write ( "<br>sresult : " + test1() + "<br>" );	//empty inputs to use default x and y
+		
+		//	4. Parameter Passing Methods 
+
+		function test2(x, y){
+			return  x + " , " + y; //returns copy values of inputs
+		}
+		
+		function test3(x, y){
+			return  x[0] + " , " + y[0]; //returns values are passed by reference in the addresses
+		}
+
+		document.write ( "<br><b>4. parameter passing methods</b>" );
+
+		//		4.1 Pass by value
+
+		document.write ( "<br><i>4.1 pass by value</i>");
+		
+		//variables
+		var p = 15;
+		var q = 25;
+			
+		document.write ( "<br>result (x, y): " + test2(p,q) + "<br>" );	//value inputs
+
+		//		4.2 Pass by reference	
+
+		document.write ( "<br><i>4.2 pass by reference</i>");		
+
+		//static variables
+		var a = [15];
+		var b = [25];
+
+		document.write ( "<br>result (x, y): " + test3(a,b) + "<br>" );	//values that are contained in array addresses
+	</script>
+	</body>
+</html>
